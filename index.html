@@ -75,7 +75,7 @@
 					<li><a href="#" data-level="குறுந்தொகை" title="filter books by குறுந்தொகை">குறுந்தொகை</a></li>
 					<li><a href="#" data-level="கார்_நாற்பது" title="filter books by கார் நாற்பது">கார் நாற்பது</a></li>
 					<li><a href="#" data-level="கைந்நிலை" title="filter books by கைந்நிலை">கைந்நிலை</a></li>
-                    <li><a href="#" data-level="களவழி_நாற்பது" title="filter books by களவழி நாற்பது">களவழி நாற்பது</a></li><br>
+                    <li><a href="#" data-level="களவழி_நாற்பது" title="filter books by களவழி நாற்பது">களவழி நாற்பது</a></li>
 					<li><a href="#" data-level="மதுரைக்_காஞ்சி" title="filter books by மதுரைக் காஞ்சி">மதுரைக் காஞ்சி</a></li>
 					<li><a href="#" data-level="பதிற்றுப்பத்து" title="filter books by பதிற்றுப்பத்து">பதிற்றுப்பத்து</a></li>
 					<li><a href="#" data-level="மணிமேகலை" title="filter books by மணிமேகலை">மணிமேகலை</a></li>
@@ -83,9 +83,9 @@
 					<li><a href="#" data-level="முதுமொழிக்காஞ்சி" title="filter books by முதுமொழிக்காஞ்சி">முதுமொழிக்காஞ்சி</a></li>
 					<li><a href="#" data-level="திருமுருகாற்றுப்படை" title="filter books by திருமுருகாற்றுப்படை">திருமுருகாற்றுப்படை</a></li>
 					<li><a href="#" data-level="நெடுநல்வாடை" title="filter books by நெடுநல்வாடை">நெடுநல்வாடை</a></li>
-					
+					<li><a href="#" data-level="பொருநராற்றுப்படை" title="filter books by பொருநராற்றுப்படை">பொருநராற்றுப்படை</a></li>
 					<li><a href="#" data-level="சிறுபஞ்ச_மூலம்" title="filter books by சிறுபஞ்ச மூலம்">சிறுபஞ்ச மூலம்</a></li>
-					<li><a href="#" data-level="பட்டினப்பாலை" title="filter books by பட்டினப்பாலை">பட்டினப்பாலை</a></li><br>
+					<li><a href="#" data-level="பட்டினப்பாலை" title="filter books by பட்டினப்பாலை">பட்டினப்பாலை</a></li>
 					<li><a href="#" data-level="மலைபடுகடாம்" title="filter books by மலைபடுகடாம்">மலைபடுகடாம்</a></li>
 					<li><a href="#" data-level="பழமொழி_நானூறு" title="filter books by பழமொழி நானூறு">பழமொழி நானூறு</a></li>
 					<li><a href="#" data-level="பெரும்பாணாற்றுப்படை" title="filter books by பெரும்பாணாற்றுப்படை">பெரும்பாணாற்றுப்படை</a></li>
@@ -104,7 +104,7 @@
 					<li><a href="#" data-level="கைந்நிலை" title="filter books by கைந்நிலை">கைந்நிலை</a></li>
 					<li><a href="#" data-level="குறிஞ்சிப்பாட்டு" title="filter books by குறிஞ்சிப்பாட்டு">குறிஞ்சிப்பாட்டு</a></li>
 					<li><a href="#" data-level="மதுரைக்_காஞ்சி" title="filter books by மதுரைக்_காஞ்சி">மதுரைக் காஞ்சி</a></li>
-					<li><a href="#" data-level="நான்மணிக்கடிகை" title="filter books by நான்மணிக்கடிகை">ஏலாதி</a></li>
+					<li><a href="#" data-level="நான்மணிக்கடிகை" title="filter books by நான்மணிக்கடிகை">நான்மணிக்கடிகை</a></li>
 					<li><a href="#" data-level="திரிகடுகம்" title="filter books by திரிகடுகம்">திரிகடுகம்</a></li>
 					<li><a href="#" data-level="திருக்குறள்" title="filter books by திருக்குறள்">திருக்குறள்</a></li>
 					
@@ -136,17 +136,14 @@
     <script src="./js/mustache.js"></script>
 
     <script type="text/javascript">
-
     function randOrd(){
       return (Math.round(Math.random())-0.5);
     }
-
     function filterBy() {
         var // var's sort by
             active = 'active',
             btFilterBy = $('#filterBy').find('a'),
             booksection = $('.booksection');
-
         // interaction filter by level
         btFilterBy.on('click', function(e) {
             e.preventDefault();
@@ -158,13 +155,10 @@
                 booksection.not('.' + level).fadeOut('fast');
                 booksection.filter('.' + level).fadeIn('fast');
             }
-
             btFilterBy.removeClass(active);
             $(this).addClass(active);
         });
     }
-
-
     $(document).ready(function() {
       $('body').addClass('loaded');
       $.getJSON('./issues.json?' + Math.random(), function(data) {
