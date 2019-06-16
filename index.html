@@ -180,7 +180,7 @@
       $('body').addClass('loaded');
       $.getJSON('./issues.json?' + Math.random(), function(data) {
         var template = $('#booktpl').html();
-        data.books.sort(randOrd);
+        //data.books.sort(randOrd);
         var html = Mustache.to_html(template, data);
         $('#issueswrap').html(html);
                     filterBy();
